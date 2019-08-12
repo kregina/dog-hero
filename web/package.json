@@ -23,7 +23,9 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "nswag": "nswag run libs/api/nswag.json"
+    "nswag": "nswag run libs/api/nswag.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -52,11 +54,17 @@
     "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "^8.0.0",
     "@angular-devkit/build-angular": "^0.800.1",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addon-notes": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/angular": "^5.1.10",
     "codelyzer": "~5.0.1",
     "jest-preset-angular": "7.0.0",
     "@nrwl/jest": "8.4.8",
     "jest": "24.1.0",
     "@types/jest": "24.0.9",
+    "babel-loader": "^8.0.6",
     "ts-jest": "24.0.0",
     "cypress": "3.4.0",
     "@nrwl/cypress": "8.4.8"
