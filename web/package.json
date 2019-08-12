@@ -22,7 +22,8 @@
     "format:check": "nx format:check",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "nswag": "nswag run libs/api/nswag.json"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +36,7 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "core-js": "^2.5.4",
+    "nswag": "^13.0.4",
     "rxjs": "~6.4.0",
     "zone.js": "^0.9.1"
   },

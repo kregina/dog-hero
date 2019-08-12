@@ -27,7 +27,7 @@ RSpec.configure do |config|
             ],
             "summary": "List all hosts",
             "description": "Returns a list of hosts",
-            "operationId": "getHosts",
+            "operationId": "Hosts_getHosts",
             "produces": [
               "application/json"
             ],
