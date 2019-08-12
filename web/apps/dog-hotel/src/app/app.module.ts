@@ -1,8 +1,10 @@
+import { API_BASE_URL } from '@dog-hero/api';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { environment } from '@dog-hotel-env/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -10,7 +12,9 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' })
   ],
-  providers: [],
+  providers: [
+    { provide: API_BASE_URL, useValue: environment.apiUrl }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
