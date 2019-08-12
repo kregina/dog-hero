@@ -13,6 +13,9 @@
     },
     "dog-hotel": {
       "tags": []
+    },
+    "api": {
+      "tags": []
     }
   }
 }
