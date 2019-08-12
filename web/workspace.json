@@ -1,7 +1,136 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "dog-hotel": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/dog-hotel",
+      "sourceRoot": "apps/dog-hotel/src",
+      "prefix": "dog-hero",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dog-hotel",
+            "index": "apps/dog-hotel/src/index.html",
+            "main": "apps/dog-hotel/src/main.ts",
+            "polyfills": "apps/dog-hotel/src/polyfills.ts",
+            "tsConfig": "apps/dog-hotel/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/dog-hotel/src/favicon.ico",
+              "apps/dog-hotel/src/assets"
+            ],
+            "styles": ["apps/dog-hotel/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dog-hotel/src/environments/environment.ts",
+                  "with": "apps/dog-hotel/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dog-hotel:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dog-hotel:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dog-hotel:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dog-hotel/tsconfig.app.json",
+              "apps/dog-hotel/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/dog-hotel/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/dog-hotel/jest.config.js",
+            "tsConfig": "apps/dog-hotel/tsconfig.spec.json",
+            "setupFile": "apps/dog-hotel/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dog-hotel-e2e": {
+      "root": "apps/dog-hotel-e2e",
+      "sourceRoot": "apps/dog-hotel-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dog-hotel-e2e/cypress.json",
+            "tsConfig": "apps/dog-hotel-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dog-hotel:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dog-hotel:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/dog-hotel-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dog-hotel-e2e/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "dog-hotel"
 }

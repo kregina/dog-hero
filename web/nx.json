@@ -7,5 +7,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "dog-hotel-e2e": {
+      "tags": []
+    },
+    "dog-hotel": {
+      "tags": []
+    }
+  }
 }
