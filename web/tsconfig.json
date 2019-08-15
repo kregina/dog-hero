@@ -18,7 +18,8 @@
     "paths": {
       "@dog-hotel/*": ["apps/dog-hotel/src/app/*"],
       "@dog-hotel-env/*": ["apps/dog-hotel/src/environments/*"],
-      "@dog-hero/api": ["libs/api/src/index.ts"]
+      "@dog-hero/api": ["libs/api/src/index.ts"],
+      "@dog-hero/shared-components": ["libs/shared-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
