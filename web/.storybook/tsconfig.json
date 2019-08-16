@@ -3,12 +3,24 @@
   "compilerOptions": {
     "types": [
       "node"
-    ]
+    ],
+    "outDir": "../../dist/out-tsc",
+    "target": "es2015",
+    "declaration": true,
+    "inlineSources": true,
+    "lib": ["dom", "es2018"]
   },
   "include": [
     "../stories/**/*",
+    "../libs/**/*.ts",
   ],
-  "files": [
-    "./typings.d.ts"
-  ]
+  "exclude": ["../src/test-setup.ts", "../libs/**/*.spec.ts"],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
+  },
 }

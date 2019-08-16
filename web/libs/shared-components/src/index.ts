@@ -1,3 +1,3 @@
-export * from './lib/shared-components.module';
-export * from './lib/card/card.module';
-export * from './lib/shell/shell.module';
+export * from './lib';
+export * from './lib/card';
+export * from './lib/shell';
