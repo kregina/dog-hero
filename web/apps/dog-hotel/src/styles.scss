@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+
+@import "~theme/typography/type-scale";
+@import "~theme/typography/dog-hero-font";
+
+:root {
+  --font-family-primary: 'Lato', 'Arial', sans-serif;
+  --font-family-secondary: 'Open Sans', 'Arial', sans-serif;;
+}
+
+body {
+  font-size: 14px;
+  font-family: var(--font-family-primary);
+  margin: 0;
+  padding: 0;
+}

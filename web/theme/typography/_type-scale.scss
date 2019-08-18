@@ -1,6 +1,6 @@
 :root {
-  --base-size: 1rem;
-  --type-scale: 1.33;
+  --base-size: 1em;
+  --type-scale: 1.200;
   --h3: calc(var(--base-size) * var(--type-scale));
   --h2: calc(var(--h3) * var(--type-scale));
   --h1: calc(var(--h2) * var(--type-scale));
@@ -13,3 +13,4 @@ h2 {font-size: var(--h2);}
 h3 {font-size: var(--h3);}
 
 p {font-size: var(--base-size);}
+

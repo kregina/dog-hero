@@ -1,0 +1,19 @@
+/* .navbar */
+
+.navbar {
+  justify-content: initial;
+  padding: 0.22rem 1rem;
+
+  .navbar-brand {
+    margin: auto;
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    border: none;
+  }
+
+  i {
+    font-size: 1.2em;
+  }
+}

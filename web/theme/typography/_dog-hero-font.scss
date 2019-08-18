@@ -1,18 +1,26 @@
-@import "dog-hero-font-variables";
+$icon-calendar: "\e900";
+$icon-exclusive: "\e901";
+$icon-favorite: "\e902";
+$icon-filter-negative: "\e903";
+$icon-flat: "\e904";
+$icon-menu: "\e905";
+$icon-repeat-guests: "\e906";
+$icon-search-negative: "\e907";
+$icon-star-filled: "\e908";
 
 @font-face {
-  font-family: '#{$font-family}';
+  font-family: 'Dog Hero Icons';
   src:
-    url('#{$font-path}/#{$font-family}.ttf?aes5yd') format('truetype'),
-    url('#{$font-path}/#{$font-family}.woff?aes5yd') format('woff'),
-    url('#{$font-path}/#{$font-family}.svg?aes5yd##{$font-family}') format('svg');
+    url('assets/dog-hero-icons-fonts/dog-hero-icons.ttf') format('truetype'),
+    url('assets/dog-hero-icons-fonts/dog-hero-icons.woff') format('woff'),
+    url('assets/dog-hero-icons-fonts/dog-hero-icons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: '#{$font-family}' !important;
+  font-family: 'Dog Hero Icons' !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
