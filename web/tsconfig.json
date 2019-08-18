@@ -20,7 +20,8 @@
       "@dog-hotel-env/*": ["apps/dog-hotel/src/environments/*"],
       "@dog-hero/api": ["libs/api/src/index.ts"],
       "@dog-hero/shared-components": ["libs/shared-components/src/index.ts"],
-      "@dog-hero/shared-assets": ["libs/shared-assets/*"]
+      "@dog-hero/shared-assets": ["libs/shared-assets/*"],
+      "@dog-hero/bootstrap": ["libs/bootstrap/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

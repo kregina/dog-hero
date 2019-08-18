@@ -22,6 +22,9 @@
     },
     "shared-assets": {
       "tags": []
+    },
+    "bootstrap": {
+      "tags": []
     }
   }
 }

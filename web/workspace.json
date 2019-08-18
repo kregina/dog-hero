@@ -179,6 +179,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "bootstrap": {
+      "projectType": "library",
+      "root": "libs/bootstrap",
+      "sourceRoot": "libs/bootstrap/src",
+      "prefix": "dog-hero",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/bootstrap/tsconfig.lib.json",
+              "libs/bootstrap/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/bootstrap/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/bootstrap/jest.config.js",
+            "tsConfig": "libs/bootstrap/tsconfig.spec.json",
+            "setupFile": "libs/bootstrap/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
