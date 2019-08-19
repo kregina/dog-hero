@@ -1,4 +1,3 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 
 import { CardModule } from './card.module';
