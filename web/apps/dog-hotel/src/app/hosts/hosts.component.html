@@ -25,7 +25,7 @@
 
       <dh-card-extra>
         <button type="button" class="btn btn-link">
-          <i class="icon-favorite"></i>
+          <i class="icon-favorite" [ngStyle]="{'color': host.favorite ? '#ef3a5d' : 'inherit'}"></i>
         </button>
         <div class="price">
           <span><small>R$</small><span>{{host.locale.price}}</span></span>
