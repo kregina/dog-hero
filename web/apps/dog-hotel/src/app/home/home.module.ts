@@ -6,9 +6,10 @@ import { CardModule } from '@dog-hero/shared-components';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { SearchComponent } from '@dog-hotel/search/search.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, SearchComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

@@ -1,0 +1,61 @@
+@import "~theme/colors-theme/gray";
+@import "~theme/colors-theme/pink";
+
+.search {
+  background: $dg-gray-palette-3-hex;
+  padding: 1.143rem;
+
+  .form-group {
+    display: flex;
+    width: 100%;
+    margin-bottom: .5rem;
+    padding: 0 5px;
+
+    .input-group {
+      border-radius: 5px 0 0 5px;
+      background-blend-mode: multiply;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+      }
+
+      & + .input-group {
+        border-radius: 0 5px 5px 0;
+        margin-left: 2px;
+      }
+    }
+
+    .btn-link {
+      color: $dg-gray-palette-5-hex;
+      padding-right: 0;
+      text-decoration: none;
+    }
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  .btn {
+    width: 43vw;
+    font-size: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1.77;
+
+    span {
+      margin: 0 0 0 8px;
+    }
+  }
+}
