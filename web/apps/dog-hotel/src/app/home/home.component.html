@@ -14,47 +14,7 @@
 <!-- end search-->
 
 <!-- card start -->
-<dh-card>
-  <dh-card-alert>
-    <div class="alert alert-success" role="alert">
-      Disponível para o feriado
-    </div>
-  </dh-card-alert>
-  <dh-card-header>
-    <dh-card-avatar>AVATAR</dh-card-avatar>
-    <dh-card-title>Jeremiah</dh-card-title>
-    <dh-card-subtitle>Lar cheio de amor pra dar e vender</dh-card-subtitle>
-    <dh-card-subtitle><small>Vila Mariana a 1.2km</small></dh-card-subtitle>
-    <div class="rating">
-      <ngb-rating [(rate)]="currentRate" [readonly]="true" max="5">
-        <ng-template let-fill="fill" let-index="index">
-          <span class="star">&#9733;</span>
-        </ng-template>
-      </ngb-rating>({{currentRate}})
-    </div>
-    <dh-card-extra>
-      <button type="button" class="btn btn-link">
-        <i class="icon-favorite"></i>
-      </button>
-      <div class="price">
-        <span><small>R$</small><span>96</span></span>
-        <div><small>p/ noite</small></div>
-      </div>
-    </dh-card-extra>
-  </dh-card-header>
-  <dh-card-content>
-    <div class="highlights">
-      <div class="item">
-        <div><i class="icon-flat"></i>Apê</div>
-        <div><i class="icon-repeat-guests"></i>12 Clientes fiéis</div>
-        <div><i class="icon-exclusive"></i>Um cliente por vez</div>
-      </div>
-      <div class="mask"></div>
-    </div>
-
-    <button type="button" class="btn btn-outline-secondary">Conversar com Jeremiah</button>
-  </dh-card-content>
-</dh-card>
+<dog-hero-hosts></dog-hero-hosts>
 <!-- card start -->
 
 <!-- start banner-blue-->

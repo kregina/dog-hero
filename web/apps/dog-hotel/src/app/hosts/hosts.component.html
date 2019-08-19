@@ -1,0 +1,51 @@
+<div *ngIf="hosts$ | async as hosts; else Loading">
+  <dh-card *ngFor="let host of hosts" >
+    <dh-card-alert *ngIf="host.availability_confirmed"  class="alert alert-success" role="alert">
+      Disponível para o feriado
+    </dh-card-alert>
+    <dh-card-header>
+      <dh-badge dhCardAvatar>
+        <dh-avatar>
+          <img [src]="host.user.image_url" width="64" alt="Imagem Host">
+        </dh-avatar>
+        <img *ngIf="host.is_superhero" width="24" dhBadgeContent src="assets/images/on.svg">
+      </dh-badge>
+
+      <dh-card-title>{{host.user.first_name}}</dh-card-title>
+      <dh-card-subtitle>{{host.chopped_desc}}</dh-card-subtitle>
+      <dh-card-subtitle><small>{{host.region_address}}</small></dh-card-subtitle>
+
+      <div class="rating">
+        <ngb-rating [(rate)]="host.rating" [readonly]="true" max="5">
+          <ng-template let-fill="fill" let-index="index">
+            <span class="star">&#9733;</span>
+          </ng-template>
+        </ngb-rating>({{host.rating}})
+      </div>
+
+      <dh-card-extra>
+        <button type="button" class="btn btn-link">
+          <i class="icon-favorite"></i>
+        </button>
+        <div class="price">
+          <span><small>R$</small><span>{{host.locale.price}}</span></span>
+          <div><small>p/ noite</small></div>
+        </div>
+      </dh-card-extra>
+    </dh-card-header>
+    <dh-card-content>
+      <div class="highlights">
+        <div class="item">
+          <div><i class="icon-flat"></i>Apê</div>
+          <div><i class="icon-repeat-guests"></i>12 Clientes fiéis</div>
+          <div><i class="icon-exclusive"></i>Um cliente por vez</div>
+        </div>
+        <div class="mask"></div>
+      </div>
+
+      <button type="button" class="btn btn-outline-secondary">Conversar com {{host.user.first_name}}</button>
+    </dh-card-content>
+  </dh-card>
+</div>
+
+<ng-template #Loading></ng-template>

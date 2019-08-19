@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { API_BASE_URL } from '@dog-hero/api';
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShellModule
+    ShellModule,
+    HttpClientModule
   ],
   providers: [
     { provide: API_BASE_URL, useValue: environment.apiUrl }

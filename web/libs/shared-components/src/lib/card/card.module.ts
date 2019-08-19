@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { Card, CardAvatar, CardExtra, CardHeader, CardSubtitle, CardTitle, CardContent, CardAlert } from './card';
 
-export const MODULE_DECLARATIONS = [Card, CardAvatar, CardExtra, CardHeader, CardSubtitle, CardTitle, CardContent, CardAlert];
+const MODULE_DECLARATIONS = [Card, CardAvatar, CardExtra, CardHeader, CardSubtitle, CardTitle, CardContent, CardAlert];
 
 @NgModule({
   declarations: MODULE_DECLARATIONS,

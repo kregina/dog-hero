@@ -1,11 +1,12 @@
 .dh-badge {
   position: relative;
   display: inline-block;
+  width: 65px;
 }
 
 .dh-badge-content {
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   right: 0;
   margin-left: -50%;
   margin-top: -50%;
