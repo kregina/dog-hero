@@ -120,21 +120,19 @@
   color: rgba(0, 0, 0, 0.66);
   font-weight: bold;
 }
+
 .dh-card-subtitle {
   color: rgba(0, 0, 0, 0.42);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* rating */
 .rating {
   font-size: 1rem;
   color: $dg-pink-palette-3-hex;
-}
-
-.btn-link {
-  color: $dg-gray-palette-4-hex;
-  padding: 0;
-  text-decoration: none;
-  font-size: 1.3rem;
-  cursor: pointer;
 }
 
 /deep/ .sr-only {
@@ -147,3 +145,29 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* favorite */
+.btn-link {
+  color: $dg-gray-palette-4-hex;
+  padding: 0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* price */
+.price {
+  color: rgba(0, 0, 0, 0.42);
+
+  span {
+    color: $dg-pink-palette-3-hex;
+
+    span {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+}
+
+
+
