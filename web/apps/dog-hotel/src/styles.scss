@@ -1,13 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~theme/colors-theme/pink";
+@import "~theme/colors-theme/gray";
+@import "~theme/colors-theme/gray";
+
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary": $dg-pink-palette-3-hex,
+  "secondary": $dg-gray-palette-5-hex
+);
+
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
-
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/input-group";
 
 @import "~theme/typography/type-scale";
 @import "~theme/typography/dog-hero-font";

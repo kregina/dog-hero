@@ -1,3 +1,4 @@
+$icon-location: "\e909";
 $icon-calendar: "\e900";
 $icon-exclusive: "\e901";
 $icon-favorite: "\e902";
@@ -32,6 +33,11 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
 .icon-calendar {
   &:before {
     content: $icon-calendar;
@@ -77,4 +83,3 @@ i {
     content: $icon-star-filled;
   }
 }
-

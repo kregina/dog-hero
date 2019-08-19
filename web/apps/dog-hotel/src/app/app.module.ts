@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { API_BASE_URL } from '@dog-hero/api';
-import { BootstrapModule } from '@dog-hero/bootstrap';
 import { ShellModule } from '@dog-hero/shared-components';
 import { environment } from '@dog-hotel-env/environment';
 
@@ -13,8 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShellModule,
-    BootstrapModule
+    ShellModule
   ],
   providers: [
     { provide: API_BASE_URL, useValue: environment.apiUrl }

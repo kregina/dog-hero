@@ -1,33 +1,20 @@
-$dog-hero-pink: (
-    50 : #fde7ec,
-    100 : #fac4ce,
-    200 : #f79dae,
-    300 : #f4758e,
-    400 : #f15875,
-    500 : #ef3a5d,
-    600 : #ed3455,
-    700 : #eb2c4b,
-    800 : #e82541,
-    900 : #e41830,
-    A100 : #ffffff,
-    A200 : #ffe3e6,
-    A400 : #ffb0b7,
-    A700 : #ff96a0,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
+/* Color Theme Swatches in Hex */
+$dg-pink-palette-1-hex: #B02A45;
+$dg-pink-palette-2-hex: #701B2C;
+$dg-pink-palette-3-hex: #ef3a5d;
+$dg-pink-palette-4-hex: #FC3D63;
+$dg-pink-palette-5-hex: #D63354;
 
+/* Color Theme Swatches in RGBA */
+$dg-pink-palette-1-rgba: rgba(176,42,69, 1);
+$dg-pink-palette-2-rgba: rgba(112,27,44, 1);
+$dg-pink-palette-3-rgba: rgba(240,58,94, 1);
+$dg-pink-palette-4-rgba: rgba(252,61,99, 1);
+$dg-pink-palette-5-rgba: rgba(214,51,84, 1);
+
+/* Color Theme Swatches in HSLA */
+$dg-pink-palette-1-hsla: hsla(347, 61, 42, 1);
+$dg-pink-palette-2-hsla: hsla(348, 61, 27, 1);
+$dg-pink-palette-3-hsla: hsla(348, 85, 58, 1);
+$dg-pink-palette-4-hsla: hsla(348, 96, 61, 1);
+$dg-pink-palette-5-hsla: hsla(347, 66, 51, 1);
