@@ -179,5 +179,32 @@
   }
 }
 
+/* highlights */
+.highlights {
+  position: relative;
 
+  .mask {
+    position: absolute;
+    background-image: linear-gradient(white, transparent);
+    width: 2rem;
+    height: 2rem;
+    right: -10px;
+    top: 10px;
+  }
+}
 
+.item {
+  overflow: auto;
+  white-space: nowrap;
+  margin-top: 1rem;
+
+  & > div{
+    display: inline-flex;
+    color: rgba(0, 0, 0, 0.24);
+    padding: 0 1.5rem 1rem 0;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}
