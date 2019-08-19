@@ -111,6 +111,16 @@
 }
 
 /* card */
+.dh-card {
+  .btn-outline-secondary {
+    color: $dg-pink-palette-3-hex;
+    border: solid 1px rgba(0, 0, 0, 0.12);
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+}
+
 .alert {
   padding: 6px;
 }
