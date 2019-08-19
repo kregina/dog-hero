@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BootstrapModule } from '@dog-hero/bootstrap';
+import { CardModule } from '@dog-hero/shared-components';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     HomeRoutingModule,
     BootstrapModule,
-    FormsModule
+    FormsModule,
+    CardModule
   ]
 })
 export class HomeModule { }

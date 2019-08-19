@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~theme/colors-theme/pink";
 @import "~theme/colors-theme/gray";
-@import "~theme/colors-theme/gray";
+@import "~theme/colors-theme/green";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -9,7 +9,8 @@
 
 $theme-colors: (
   "primary": $dg-pink-palette-3-hex,
-  "secondary": $dg-gray-palette-5-hex
+  "secondary": $dg-gray-palette-5-hex,
+  "success": $dg-green-palette-3-hex
 );
 
 @import "~bootstrap/scss/buttons";
@@ -17,6 +18,8 @@ $theme-colors: (
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/root";
 
 @import "~theme/typography/type-scale";
 @import "~theme/typography/dog-hero-font";

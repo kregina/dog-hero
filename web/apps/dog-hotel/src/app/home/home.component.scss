@@ -2,7 +2,6 @@
 @import "~theme/colors-theme/pink";
 
 /* .navbar */
-
 .navbar {
   justify-content: initial;
   padding: 0.22rem 1.143rem;
@@ -80,7 +79,6 @@
 }
 
 /* banners*/
-
 .banner {
   padding: 32px 23px;
 
@@ -109,4 +107,34 @@
   p {
     margin-left: 5px;
   }
+}
+
+/* card */
+.alert {
+  padding: 6px;
+}
+
+.dh-card-title {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.66);
+  font-weight: bold;
+}
+.dh-card-subtitle {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.rating {
+  font-size: 1rem;
+  color: $dg-pink-palette-3-hex;
+}
+
+/deep/ .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
