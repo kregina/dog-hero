@@ -1,0 +1,42 @@
+.dh-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 16px;
+}
+
+.dh-card-header {
+  display: flex;
+  flex-direction: row;
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dh-card-title-group {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dh-card-title,
+.dh-card-subtitle {
+  margin-top: 0;
+}
+
+.dh-card-extra {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.dh-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dh-card-alert {
+  text-align: center;
+}
