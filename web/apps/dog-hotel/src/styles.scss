@@ -12,8 +12,6 @@ $theme-colors: (
   "secondary": $dg-gray-palette-5-hex
 );
 
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
