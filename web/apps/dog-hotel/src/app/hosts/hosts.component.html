@@ -34,8 +34,16 @@
       </dh-card-extra>
     </dh-card-header>
     <dh-card-content>
+
+      <dh-comment>
+        {{host.last_review.body}}
+        <dh-avatar>
+          <img [src]="host.last_review.client_image_url" alt="Imagem do Cliente" >
+        </dh-avatar>
+      </dh-comment>
+
       <div class="highlights">
-        <div class="item">
+        <div class="list">
           <div><i class="icon-flat"></i>Apê</div>
           <div><i class="icon-repeat-guests"></i>12 Clientes fiéis</div>
           <div><i class="icon-exclusive"></i>Um cliente por vez</div>

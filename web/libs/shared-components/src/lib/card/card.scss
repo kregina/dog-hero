@@ -3,6 +3,10 @@
   flex-direction: column;
   background-color: white;
   padding: 16px;
+
+  & + .dh-card {
+    margin-top: 1rem;
+  }
 }
 
 .dh-card-header {

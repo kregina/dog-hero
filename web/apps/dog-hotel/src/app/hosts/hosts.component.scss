@@ -7,7 +7,6 @@
     border: solid 1px rgba(0, 0, 0, 0.12);
     font-size: .8rem;
     font-weight: bold;
-    margin-top: 1rem;
   }
 }
 
@@ -72,6 +71,7 @@
 /* highlights */
 .highlights {
   position: relative;
+  margin-top: 1rem;
 
   .mask {
     position: absolute;
@@ -79,22 +79,22 @@
     width: 2rem;
     height: 2rem;
     right: -10px;
-    top: 10px;
+    top: -8px;
   }
-}
 
-.item {
-  overflow: auto;
-  white-space: nowrap;
-  margin-top: 1rem;
+  .list {
+    overflow: auto;
+    white-space: nowrap;
 
-  & > div{
-    display: inline-flex;
-    color: rgba(0, 0, 0, 0.24);
-    padding: 0 1.5rem 1rem 0;
+    & > div{
+      display: inline-flex;
+      color: rgba(0, 0, 0, 0.24);
+      padding: 0 1.5rem 1rem 0;
 
-    i {
-      font-size: 1.2rem;
+      i {
+        font-size: 1.2rem;
+      }
     }
   }
 }
+
