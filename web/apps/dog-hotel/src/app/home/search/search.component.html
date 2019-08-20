@@ -1,0 +1,57 @@
+<form class="search" [formGroup]="searchForm">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <button class="btn btn-link" type="button">
+          <i class="icon-location"></i>
+        </button>
+      </div>
+      <input formControlName="address" type="text" class="form-control" placeholder="Endereço" aria-label="Endereço" aria-describedby="basic-addon1">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-append">
+        <button class="btn btn-link" (click)="from.toggle()" type="button">
+          <i class="icon-calendar"></i>
+        </button>
+      </div>
+      <input formControlName="from" class="form-control" placeholder="dd/mm/yyyy" ngbDatepicker #from="ngbDatepicker">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-append">
+        <button class="btn btn-link" (click)="to.toggle()" type="button">
+          <i class="icon-calendar"></i>
+        </button>
+      </div>
+      <input formControlName="to" class="form-control" placeholder="dd/mm/yyyy" ngbDatepicker #to="ngbDatepicker">
+    </div>
+
+  </div>
+
+  <div class="buttons">
+    <button type="button" class="btn btn-secondary" (click)="shellService.openTemplate(filtroTemplate)" >
+      <i class="icon-filter-negative"></i>
+      <span>Filtros</span>
+    </button>
+    <button type="button" class="btn btn-primary" (click)="service.search(searchForm.value)" >
+      <i class="icon-search-negative"></i>
+      <span>Buscar</span>
+    </button>
+  </div>
+</form>
+
+<ng-template #filtroTemplate>
+  <div class="range">
+    <p>Faixa de preço por noite</p>
+    <form>
+      <nouislider name="priceRange" [(ngModel)]="filterForm.priceRange" start="1000" [connect]="true" [min]="0" [max]="100" [tooltips]="true" [step]="10"></nouislider>
+      <button type="button" class="btn btn-primary" (click)="service.filter(filterForm) || shellService.close()" >
+        <i class="icon-search-negative"></i>
+        <span>Aplicar filtro</span>
+      </button>
+    </form>
+  </div>
+</ng-template>

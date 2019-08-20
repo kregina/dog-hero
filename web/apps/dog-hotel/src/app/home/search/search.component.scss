@@ -60,6 +60,16 @@
   }
 }
 
+.range {
+  margin: 1rem;
+
+  form {
+    padding: 1rem 1rem 0 0;
+    width: 200px;
+  }
+}
+
+
 /deep/ .noUi-base {
   width: 94%;
 }

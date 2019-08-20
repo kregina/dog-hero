@@ -1,4 +1,4 @@
-<ng-container *ngIf="displayedHosts$ | async as hosts; else loading">
+<ng-container *ngIf="service.displayedHosts$ | async as hosts; else loading">
   <ng-container *ngFor="let host of hosts; index as i">
     <dh-card>
       <dh-card-alert *ngIf="host.availability_confirmed"  class="alert alert-success" role="alert">
@@ -70,9 +70,7 @@
     <!-- end banner-pink-->
   </ng-container>
 </ng-container>
-<mat-paginator [length]="hostsCount"
-  [pageSize]="10"
-  [pageSizeOptions]="[10,20,50]">
+<mat-paginator [length]="service.count$ | async" [pageSize]="(service.page$ | async).pageSize" (page)="service.paginate($event)">
 </mat-paginator>
 
 <ng-template #loading>
