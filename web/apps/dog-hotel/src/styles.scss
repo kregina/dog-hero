@@ -31,7 +31,8 @@ $theme-colors: (
 body {
   font-size: 14px;
   font-family: var(--font-family-primary);
-  margin: 0;
   padding: 0;
   background: #f7f5f7;
+  width: 320px;
+  margin: 0 auto;
 }

@@ -5,6 +5,7 @@
 .navbar {
   justify-content: initial;
   padding: 0.22rem 1.143rem;
+  background: white;
 
   .navbar-brand {
     margin: auto;
@@ -16,8 +17,12 @@
   }
 
   i {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
+}
+
+.navbar-toggler {
+  display: block;
 }
 
 /* banners*/
