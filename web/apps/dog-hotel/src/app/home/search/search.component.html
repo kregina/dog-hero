@@ -44,14 +44,17 @@
 </form>
 
 <ng-template #filtroTemplate>
-  <div class="range">
-    <p>Faixa de preço por noite</p>
-    <form>
-      <nouislider name="priceRange" [(ngModel)]="filterForm.priceRange" start="1000" [connect]="true" [min]="0" [max]="100" [tooltips]="true" [step]="10"></nouislider>
-      <button type="button" class="btn btn-primary" (click)="service.filter(filterForm) || shellService.close()" >
-        <i class="icon-search-negative"></i>
-        <span>Aplicar filtro</span>
-      </button>
-    </form>
-  </div>
+  <h3 class="filter-title">Filtros</h3>
+  <mat-list role="list">
+    <h3 mat-subheader>Faixa de preço por noite</h3>
+    <mat-list-item class="range">
+      <form>
+        <nouislider name="priceRange" [(ngModel)]="filterForm.priceRange" start="1000" [connect]="true" [min]="0" [max]="100" [tooltips]="true" [step]="10"></nouislider>
+        <button type="button" class="btn btn-primary" (click)="service.filter(filterForm) || shellService.close()" >
+          <i class="icon-search-negative"></i>
+          <span>Aplicar filtro</span>
+        </button>
+      </form>
+    </mat-list-item>
+  </mat-list>
 </ng-template>

@@ -60,12 +60,28 @@
   }
 }
 
+.filter-title {
+  font-weight: normal;
+  border-bottom: 2px solid $dg-pink-palette-3-hex;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.mat-subheader {
+  background: #f1f1f1;
+}
+
 .range {
-  margin: 1rem;
+  margin: 2rem 0;
 
   form {
     padding: 1rem 1rem 0 0;
     width: 200px;
+  }
+
+  .btn {
+    float: right;
   }
 }
 
