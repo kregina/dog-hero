@@ -9,13 +9,15 @@ import { SearchComponent } from '@dog-hotel/search/search.component';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { HighlightsPipe } from './highlights.pipe';
 
 @NgModule({
   declarations: [
     HomeComponent,
     SearchComponent,
     HostsComponent,
-    HorizontalScrollComponent
+    HorizontalScrollComponent,
+    HighlightsPipe
   ],
   imports: [
     CommonModule,

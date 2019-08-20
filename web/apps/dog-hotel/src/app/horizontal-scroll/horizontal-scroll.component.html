@@ -1,4 +1,8 @@
 <div class="list">
-  <div *ngFor="let item of list"><i class="icon-flat"></i>{{item.value}}</div>
+  <div *ngFor="let item of list">
+    <ng-container *ngIf="item | highlights as h" >
+      <i class="icon-{{h.name}}"></i>{{h.value}}
+    </ng-container>
+  </div>
 </div>
 <div class="mask"></div>
