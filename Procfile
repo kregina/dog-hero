@@ -1,1 +1,1 @@
-api: sh -c 'cd ./api/ && exec dog-hero'
+web: bundle exec rails server thin -p \$PORT -e \$RACK_ENV
