@@ -15,12 +15,14 @@
       <dh-card-subtitle>{{host.chopped_desc}}</dh-card-subtitle>
       <dh-card-subtitle><small>{{host.region_address}}</small></dh-card-subtitle>
 
-      <div class="rating">
+      <div class="rating" *ngIf="host.reviews_count > 0">
         <ngb-rating [(rate)]="host.rating" [readonly]="true" max="5">
           <ng-template let-fill="fill" let-index="index">
-            <span class="star">&#9733;</span>
+            <span class="star">
+              <i class="icon-star-filled"></i>
+            </span>
           </ng-template>
-        </ngb-rating>({{host.rating}})
+        </ngb-rating>({{host.reviews_count}})
       </div>
 
       <dh-card-extra>
