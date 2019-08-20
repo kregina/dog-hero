@@ -1,53 +1,78 @@
-<div *ngIf="hosts$ | async as hosts; else Loading">
-  <dh-card *ngFor="let host of hosts" >
-    <dh-card-alert *ngIf="host.availability_confirmed"  class="alert alert-success" role="alert">
-      Disponível para o feriado
-    </dh-card-alert>
-    <dh-card-header>
-      <dh-badge dhCardAvatar>
-        <dh-avatar>
-          <img [src]="host.user.image_url" width="64" alt="Imagem Host">
-        </dh-avatar>
-        <img *ngIf="host.is_superhero" width="24" dhBadgeContent src="assets/images/on.svg">
-      </dh-badge>
+<ng-container *ngIf="displayedHosts$ | async as hosts; else loading">
+  <ng-container *ngFor="let host of hosts; index as i">
+    <dh-card>
+      <dh-card-alert *ngIf="host.availability_confirmed"  class="alert alert-success" role="alert">
+        Disponível para o feriado
+      </dh-card-alert>
+      <dh-card-header>
+        <dh-badge dhCardAvatar>
+          <dh-avatar>
+            <img [src]="host.user.image_url" width="64" alt="Imagem Host">
+          </dh-avatar>
+          <img *ngIf="host.is_superhero" width="24" dhBadgeContent src="assets/images/on.svg">
+        </dh-badge>
 
-      <dh-card-title>{{host.user.first_name}}</dh-card-title>
-      <dh-card-subtitle>{{host.chopped_desc}}</dh-card-subtitle>
-      <dh-card-subtitle><small>{{host.region_address}}</small></dh-card-subtitle>
+        <dh-card-title>{{host.user.first_name}}</dh-card-title>
+        <dh-card-subtitle>{{host.chopped_desc}}</dh-card-subtitle>
+        <dh-card-subtitle><small>{{host.region_address}}</small></dh-card-subtitle>
 
-      <div class="rating" *ngIf="host.reviews_count > 0">
-        <ngb-rating [(rate)]="host.rating" [readonly]="true" max="5">
-          <ng-template let-fill="fill" let-index="index">
-            <span class="star">
-              <i class="icon-star-filled"></i>
-            </span>
-          </ng-template>
-        </ngb-rating>({{host.reviews_count}})
-      </div>
-
-      <dh-card-extra>
-        <button type="button" class="btn btn-link">
-          <i class="icon-favorite" [ngStyle]="{'color': host.favorite ? '#ef3a5d' : 'inherit'}"></i>
-        </button>
-        <div class="price">
-          <span><small>R$</small><span>{{host.locale.price}}</span></span>
-          <div><small>p/ noite</small></div>
+        <div class="rating" *ngIf="host.reviews_count > 0">
+          <ngb-rating [(rate)]="host.rating" [readonly]="true" max="5">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star">
+                <i class="icon-star-filled"></i>
+              </span>
+            </ng-template>
+          </ngb-rating>({{host.reviews_count}})
         </div>
-      </dh-card-extra>
-    </dh-card-header>
-    <dh-card-content>
-      <dh-comment>
-        {{host.last_review.body}}
-        <dh-avatar>
-          <img [src]="host.last_review.client_image_url" alt="Imagem do Cliente" >
-        </dh-avatar>
-      </dh-comment>
 
-      <dog-hero-horizontal-scroll [list]="host.highlights"></dog-hero-horizontal-scroll>
+        <dh-card-extra>
+          <button type="button" class="btn btn-link">
+            <i class="icon-favorite" [ngStyle]="{'color': host.favorite ? '#ef3a5d' : 'inherit'}"></i>
+          </button>
+          <div class="price">
+            <span><small>R$</small><span>{{host.locale.price}}</span></span>
+            <div><small>p/ noite</small></div>
+          </div>
+        </dh-card-extra>
+      </dh-card-header>
+      <dh-card-content>
+        <dh-comment>
+          {{host.last_review.body}}
+          <dh-avatar>
+            <img [src]="host.last_review.client_image_url" alt="Imagem do Cliente" >
+          </dh-avatar>
+        </dh-comment>
 
-      <button type="button" class="btn btn-outline-primary">Conversar com {{host.user.first_name}}</button>
-    </dh-card-content>
-  </dh-card>
-</div>
+        <dog-hero-horizontal-scroll [list]="host.highlights"></dog-hero-horizontal-scroll>
 
-<ng-template #Loading></ng-template>
+        <button type="button" class="btn btn-outline-primary">Conversar com {{host.user.first_name}}</button>
+      </dh-card-content>
+
+    </dh-card>
+    <!-- start banner-blue-->
+    <div *ngIf="i === 2"  class="banner banner-blue">
+      <p>
+        A hospedagem do seu cãozinho
+        estará coberta pela <strong>Garantia Veterinária DogHero</strong> de até
+        R$5.000 para emergências.
+      </p>
+    </div>
+    <!-- end banner-blue-->
+
+    <!-- start banner-pink-->
+    <div *ngIf="i === 3" class="banner banner-pink">
+      <img src="assets/images/badge.svg" width="100" alt="Imagem Super Super-Herói">
+      <p>
+          Os anfitriões que mais se destacam na comunidade recebem a medalha de <strong>Super-Herói</strong> no perfil.
+      </p>
+    </div>
+    <!-- end banner-pink-->
+  </ng-container>
+</ng-container>
+<mat-paginator [length]="hostsCount"
+  [pageSize]="10"
+  [pageSizeOptions]="[10,20,50]">
+</mat-paginator>
+
+<ng-template #loading></ng-template>

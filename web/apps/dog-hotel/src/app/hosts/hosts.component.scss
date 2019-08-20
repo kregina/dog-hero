@@ -67,4 +67,33 @@
   }
 }
 
+/* banners*/
+.banner {
+  padding: 32px 23px;
 
+  p {
+    color: white;
+    margin: 0;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+}
+
+.banner-blue {
+  background: #0082ca;
+  text-align: center;
+  font-size: 1.142rem;
+}
+
+.banner-pink {
+  background: $dg-pink-palette-3-hex;
+  display: flex;
+  font-family: var(--font-family-secondary);
+  font-size: 1rem;
+
+  p {
+    margin-left: 5px;
+  }
+}

@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { BootstrapModule } from '@dog-hero/bootstrap';
 import { AvatarModule, BadgeModule, CardModule, CommentModule } from '@dog-hero/shared-components';
 import { HorizontalScrollComponent } from '@dog-hotel/horizontal-scroll/horizontal-scroll.component';
 import { HostsComponent } from '@dog-hotel/hosts/hosts.component';
 import { SearchComponent } from '@dog-hotel/search/search.component';
 
+import { HighlightsPipe } from './highlights.pipe';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { HighlightsPipe } from './highlights.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HighlightsPipe } from './highlights.pipe';
     CardModule,
     AvatarModule,
     BadgeModule,
-    CommentModule
+    CommentModule,
+    MatPaginatorModule
   ]
 })
 export class HomeModule { }
