@@ -1,3 +1,19 @@
-<p>
-  pato
-</p>
+<mat-sidenav-container>
+  <mat-sidenav #leftSidenav>Left sidenav content</mat-sidenav>
+  <mat-sidenav #rightSidenav position="end">
+    <ng-template [cdkPortalOutlet]="shellService.portal$ | async"></ng-template>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="leftSidenav.open()" >
+        <i class="icon-menu"></i>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/dog-hero-logo.svg" alt="Dog Hero logo">
+      </a>
+    </nav>
+    <main>
+      <ng-content></ng-content>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

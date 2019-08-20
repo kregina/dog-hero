@@ -32,7 +32,7 @@
   </div>
 
   <div class="buttons">
-    <button type="button" class="btn btn-secondary">
+    <button type="button" class="btn btn-secondary" (click)="shellService.openTemplate(filtroTemplate)" >
         <i class="icon-filter-negative"></i>
         <span>Filtros</span>
     </button>
@@ -45,3 +45,6 @@
   <nouislider name="range" [connect]="true" [min]="0" [max]="100" [(ngModel)]="someRange" [tooltips]="true"></nouislider>
 </form>
 
+<ng-template #filtroTemplate>
+  |HELLO WORLD!
+</ng-template>

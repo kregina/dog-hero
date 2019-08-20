@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { ShellService } from './shell.service';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'dog-hero-shell',
+  selector: 'dh-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss']
+  styleUrls: ['./shell.component.scss'],
+  providers: [
+    ShellService
+  ]
 })
-export class ShellComponent implements OnInit {
+export class ShellComponent implements AfterViewInit {
+  @ViewChild('rightSidenav', {static: false}) rightSidenav: MatSidenav
 
-  constructor() { }
+  constructor(public shellService: ShellService) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.shellService.attatch(this.rightSidenav);
   }
-
 }

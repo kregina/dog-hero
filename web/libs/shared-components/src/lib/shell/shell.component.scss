@@ -1,3 +1,25 @@
-p {
-  color: red
+@import "~theme/colors-theme/gray";
+@import "~theme/colors-theme/pink";
+
+.navbar {
+  justify-content: initial;
+  padding: 0.22rem 1.143rem;
+  background: white;
+
+  .navbar-brand {
+    margin: auto;
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    border: none;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.navbar-toggler {
+  display: block;
 }
