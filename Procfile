@@ -1,0 +1,1 @@
+api: sh -c 'cd ./api/ && exec dog-hero'
