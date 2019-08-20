@@ -1,5 +1,26 @@
 <mat-sidenav-container>
-  <mat-sidenav #leftSidenav>Left sidenav content</mat-sidenav>
+  <mat-sidenav #leftSidenav>
+    <mat-list>
+      <h3 mat-subheader>Menu</h3>
+      <mat-list-item>
+        <p mat-line>
+          <a class="btn btn-link" href="https://doghero.com.br/" target="_blank">DogHero</a>
+        </p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <p mat-line>
+          <a class="btn btn-link" href="https://love.doghero.com.br/" target="_blank">Blog DogHero</a>
+        </p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <p mat-line>
+          <a class="btn btn-link" href="https://www.doghero.com.br/como-funciona" target="_blank">Como funciona</a>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
   <mat-sidenav #rightSidenav position="end">
     <ng-template [cdkPortalOutlet]="shellService.portal$ | async"></ng-template>
   </mat-sidenav>

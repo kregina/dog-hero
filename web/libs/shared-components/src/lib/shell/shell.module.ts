@@ -2,6 +2,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 import { ShellComponent } from './shell.component';
 
@@ -10,7 +11,8 @@ import { ShellComponent } from './shell.component';
   imports: [
     CommonModule,
     MatSidenavModule,
-    PortalModule
+    PortalModule,
+    MatListModule
   ],
   exports: [ShellComponent]
 })

@@ -1,1 +1,0 @@
-api: sh -c 'cd ./api/ && exec rails s'
