@@ -34,7 +34,9 @@ storiesOf('Card', module)
     <dh-card>
       <dh-card-alert>Disponível para o feriado</dh-card-alert>
       <dh-card-header>
-        <dh-card-avatar>AVATAR</dh-card-avatar>
+        <dh-card-avatar>
+          <img width="70" height="70" src="https://avatars2.githubusercontent.com/u/22871954?s=460&v=4" alt="Kelly Silva" title="Kelly Silva" />
+        </dh-card-avatar>
         <dh-card-title>Jeremiah</dh-card-title>
         <dh-card-subtitle>Lar cheio de amor pra dar e vender</dh-card-subtitle>
         <dh-card-subtitle>Vila Mariana a 1.2km</dh-card-subtitle>

@@ -11,10 +11,12 @@ storiesOf('Comment', module)
 )
 .add('basic', () => ({
   template: `
-  <div style="width:320px; padding:2em; background-color:#f1f1f1">
+  <div style="width:320px; padding:1em;">
     <dh-comment>
       Simple comment
-      <dh-avatar>AVATAR</dh-avatar>
+      <dh-avatar>
+        <img width="33" height="33" src="https://avatars2.githubusercontent.com/u/22871954?s=460&v=4" alt="Kelly Silva" title="Kelly Silva" />
+      </dh-avatar>
     </dh-comment>
   </div>
   `

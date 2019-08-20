@@ -3,6 +3,7 @@
   flex-direction: column;
   background-color: white;
   padding: 16px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
 
   & + .dh-card {
     margin-top: 1rem;
@@ -16,6 +17,10 @@
   & > * {
     display: flex;
     flex-direction: column;
+  }
+
+  img {
+    border-radius: 50%;
   }
 }
 
@@ -44,4 +49,18 @@
 
 .dh-card-alert {
   text-align: center;
+}
+
+.dh-card-title {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.66);
+  font-weight: bold;
+}
+
+.dh-card-subtitle {
+  color: rgba(0, 0, 0, 0.42);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
