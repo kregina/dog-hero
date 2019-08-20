@@ -9,7 +9,6 @@
     display: flex;
     width: 100%;
     margin-bottom: .5rem;
-    padding: 0 5px;
 
     .input-group {
       border-radius: 5px 0 0 5px;
@@ -58,5 +57,54 @@
     span {
       margin: 0 0 0 8px;
     }
+  }
+}
+
+/deep/ .noUi-base {
+  width: 94%;
+}
+
+/deep/ .noUi-connects {
+  width: 101%;
+}
+
+/deep/ .noUi-target {
+  background: #cdcdcd;
+  border: none;
+  box-shadow: none;
+}
+
+/deep/ .noUi-horizontal {
+  height: 3px;
+
+  .noUi-connect {
+    background: $dg-pink-palette-3-hex;
+  }
+
+  .noUi-handle {
+    background: $dg-pink-palette-3-hex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: none;
+    border: none;
+    left: -5px;
+    top: -6px;
+    outline: none;
+    transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+                height .2s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+                left .2s cubic-bezier(0.215, 0.610, 0.355, 1.000),
+                top .2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+    &:after, &:before {
+      display: none;
+    }
+  }
+
+  .noUi-tooltip {
+    background-color: $dg-pink-palette-3-hex;
+    color: white;
+    border: none;
+    outline: none;
   }
 }

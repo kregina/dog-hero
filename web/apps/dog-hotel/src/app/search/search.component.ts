@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
+  someRange: number[] = [0, 100];
+  model;
   constructor() { }
 
   ngOnInit() {

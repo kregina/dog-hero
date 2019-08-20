@@ -50,6 +50,7 @@ $theme-colors: (
 
 @import "~theme/typography/type-scale";
 @import "~theme/typography/dog-hero-font";
+@import "~nouislider/distribute/nouislider.min.css";
 
 :root {
   --font-family-primary: 'Lato', 'Arial', sans-serif;
