@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Host, HostsService } from '@dog-hero/api';
-import { BehaviorSubject, combineLatest } from 'rxjs';
-import { map, switchMap, tap, withLatestFrom, shareReplay } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 import { FilterEvent, SearchEvent } from './model';
 
@@ -23,16 +23,16 @@ export class HomeService {
     tap(({ length }) => this.count$.next(length)),
   );
 
-  displayedHosts$ = combineLatest(
-    this.hosts$,
-    this.search$,
-    this.filter$,
-    this.page$
-  ).pipe(
-    map(([hosts, search, filter, page]) => {
-      return this.applyPagination(this.applyFilter(this.applySearch(hosts, search), filter),page)
-    })
+  displayedHosts$ = this.search$.pipe(
+    switchMap(search => this.hosts$.pipe(
+      map(hosts => this.applySearch(hosts, search)))),
+    switchMap(hosts => this.filter$.pipe(
+      map(filter => this.applyFilter(hosts, filter)))),
+    tap(_ => this.page$.next(firstPage)),
+    switchMap(hosts => this.page$.pipe(
+      map(page => this.applyPagination(hosts, page))))
   )
+
   constructor(private hostsService: HostsService) { }
 
   public search(event: SearchEvent) {
