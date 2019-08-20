@@ -68,33 +68,4 @@
   }
 }
 
-/* highlights */
-.highlights {
-  position: relative;
-  margin-top: 1rem;
-
-  .mask {
-    position: absolute;
-    background-image: linear-gradient(white, transparent);
-    width: 2rem;
-    height: 2rem;
-    right: -10px;
-    top: -8px;
-  }
-
-  .list {
-    overflow: auto;
-    white-space: nowrap;
-
-    & > div{
-      display: inline-flex;
-      color: rgba(0, 0, 0, 0.24);
-      padding: 0 1.5rem 1rem 0;
-
-      i {
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
 

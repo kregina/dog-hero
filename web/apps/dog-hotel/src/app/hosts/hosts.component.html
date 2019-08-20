@@ -34,7 +34,6 @@
       </dh-card-extra>
     </dh-card-header>
     <dh-card-content>
-
       <dh-comment>
         {{host.last_review.body}}
         <dh-avatar>
@@ -42,14 +41,7 @@
         </dh-avatar>
       </dh-comment>
 
-      <div class="highlights">
-        <div class="list">
-          <div><i class="icon-flat"></i>Apê</div>
-          <div><i class="icon-repeat-guests"></i>12 Clientes fiéis</div>
-          <div><i class="icon-exclusive"></i>Um cliente por vez</div>
-        </div>
-        <div class="mask"></div>
-      </div>
+      <dog-hero-horizontal-scroll [list]="host.highlights"></dog-hero-horizontal-scroll>
 
       <button type="button" class="btn btn-outline-secondary">Conversar com {{host.user.first_name}}</button>
     </dh-card-content>
