@@ -70,10 +70,10 @@
     <!-- end banner-pink-->
   </ng-container>
 </ng-container>
-<mat-paginator [length]="service.count$ | async"
-  [pageSize]="(service.page$ | async).pageSize"
-  (page)="service.paginate($event)"
-  itemsPerPageLabel="Items por página">
+<mat-paginator
+  [length]="service.count$ | async"
+  [pageSize]="(service.page$ | async)?.pageSize"
+  (page)="service.paginate($event)">
 </mat-paginator>
 
 <ng-template #loading>

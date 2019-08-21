@@ -30,8 +30,10 @@ export class HomeService {
       map(filter => this.applyFilter(hosts, filter)))),
     tap(_ => this.page$.next(firstPage)),
     switchMap(hosts => this.page$.pipe(
-      map(page => this.applyPagination(hosts, page))))
-  )
+      map(page => this.applyPagination(hosts, page)),
+    )),
+    tap(_ => window.scroll(0, 0))
+  );
 
   constructor(private hostsService: HostsService) { }
 
