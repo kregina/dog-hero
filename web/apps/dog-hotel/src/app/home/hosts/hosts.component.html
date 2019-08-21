@@ -7,7 +7,7 @@
       <dh-card-header>
         <dh-badge dhCardAvatar>
           <dh-avatar>
-            <img [src]="host.user.image_url" width="64" alt="Imagem Host">
+            <img [src]="host.user.image_url" width="70" alt="Imagem Host">
           </dh-avatar>
           <img *ngIf="host.is_superhero" width="24" dhBadgeContent src="assets/images/on.svg">
         </dh-badge>
@@ -70,7 +70,10 @@
     <!-- end banner-pink-->
   </ng-container>
 </ng-container>
-<mat-paginator [length]="service.count$ | async" [pageSize]="(service.page$ | async).pageSize" (page)="service.paginate($event)">
+<mat-paginator [length]="service.count$ | async"
+  [pageSize]="(service.page$ | async).pageSize"
+  (page)="service.paginate($event)"
+  itemsPerPageLabel="Items por página">
 </mat-paginator>
 
 <ng-template #loading>
