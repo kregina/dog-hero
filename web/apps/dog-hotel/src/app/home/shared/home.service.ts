@@ -1,85 +1,114 @@
 import { Injectable } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Host, HostsService } from '@dog-hero/api';
-import { BehaviorSubject } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { map, shareReplay, switchMap, tap, distinctUntilChanged } from 'rxjs/operators';
 
 import { FilterEvent, SearchEvent } from './model';
 
-const firstPage = <PageEvent>{
-  pageIndex: 0,
-  pageSize: 10,
-  length: 0
-}
-
 @Injectable()
 export class HomeService {
-  search$ = new BehaviorSubject(null);
-  filter$ = new BehaviorSubject(null);
-  count$ = new BehaviorSubject(null);
-  page$ = new BehaviorSubject(firstPage);
+  search$ = combineLatest(
+    this.fromParams('address'),
+    this.fromParams('from'),
+    this.fromParams('to')
+  )
+  filter$ = combineLatest(
+    this.fromParams('price')
+  )
+  page$ = this.fromParams('page');
+  count$ = new BehaviorSubject(0);
+  pageSize = 10;
 
-  private hosts$ = this.hostsService.getHosts().pipe(
-    tap(({ length }) => this.count$.next(length)),
-  );
+  private hosts$ = this.hostsService.getHosts().pipe(shareReplay(1));
 
   displayedHosts$ = this.search$.pipe(
     switchMap(search => this.hosts$.pipe(
       map(hosts => this.applySearch(hosts, search)))),
     switchMap(hosts => this.filter$.pipe(
       map(filter => this.applyFilter(hosts, filter)))),
-    tap(_ => this.page$.next(firstPage)),
+    tap(({ length }) => this.count$.next(length)),
     switchMap(hosts => this.page$.pipe(
       map(page => this.applyPagination(hosts, page)),
-    )),
-    tap(_ => window.scroll(0, 0))
+    ))
   );
 
-  constructor(private hostsService: HostsService) { }
+  constructor(
+    private hostsService: HostsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   public search(event: SearchEvent) {
-    this.search$.next(event);
+    this.router.navigate(['./'], {
+      queryParams: {
+        ...event,
+        page: null
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 
   public filter(event: FilterEvent) {
-    this.filter$.next(event);
+    this.router.navigate(['./'], {
+      queryParams: {
+        ...event,
+        price: event.price.join('-'),
+        page: null
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 
-  public paginate(event: PageEvent) {
-    this.page$.next(event);
+  public paginate(page: number) {
+    this.router.navigate(['./'], {
+      queryParams: {
+        page: page > 1 ? page : null
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 
-  private applySearch(hosts: Host[], searchEvent: SearchEvent) {
+  private applySearch(hosts: Host[], [address, from, to]) {
     let result = hosts;
 
-    if (searchEvent) {
-      if (searchEvent.address) {
-        result = result.filter(host => host.region_address.includes(searchEvent.address))
+    if (address) {
+      result = result.filter(host => host.region_address.includes(address));
+    }
+
+    return result;
+  }
+
+  private applyFilter(hosts: Host[], [price]) {
+    debugger
+    let result = hosts;
+    if (price) {
+      const [min, max] = price.split('-');
+
+      if (min) {
+        result = result.filter(host => host.locale.price >= min)
+      }
+      if (max) {
+        result = result.filter(host => host.locale.price <= max)
       }
     }
 
     return result;
   }
 
-  private applyFilter(hosts: Host[], filterEvent: FilterEvent) {
-    let result = hosts;
-    if (filterEvent) {
-      const [ minPrice, maxPrice ] = filterEvent.priceRange;
-      if (minPrice) {
-        result = result.filter(host => host.locale.price >= minPrice)
-      }
-      if (maxPrice) {
-        result = result.filter(host => host.locale.price <= maxPrice)
-      }
-    }
-
-    return result;
-  }
-
-  private applyPagination(hosts: Host[], pageEvent: PageEvent) {
-    const from = pageEvent.pageIndex * pageEvent.pageSize;
-    const to = from + pageEvent.pageSize;
+  private applyPagination(hosts: Host[], page) {
+    debugger;
+    page = +page || 1;
+    const from = (page-1) * this.pageSize;
+    const to = from + this.pageSize;
 
     return hosts.slice(from, to);
+  }
+
+  private fromParams(key: string) {
+    return this.route.paramMap.pipe(
+      map(p => p.get(key)),
+      distinctUntilChanged()
+    );
   }
 }

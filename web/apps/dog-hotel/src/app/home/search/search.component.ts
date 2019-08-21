@@ -19,7 +19,7 @@ export class SearchComponent {
 
   //Template Driven Forms
   filterForm = {
-    priceRange: [0, 100]
+    price: [0, 100]
   }
 
   constructor(

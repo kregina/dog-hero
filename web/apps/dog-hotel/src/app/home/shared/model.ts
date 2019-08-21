@@ -5,5 +5,5 @@ export interface SearchEvent {
 }
 
 export interface FilterEvent {
-  priceRange: [number, number]
+  price: [number, number]
 }

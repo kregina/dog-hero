@@ -72,8 +72,8 @@
 </ng-container>
 <mat-paginator
   [length]="service.count$ | async"
-  [pageSize]="(service.page$ | async)?.pageSize"
-  (page)="service.paginate($event)">
+  [pageSize]="service.pageSize"
+  (page)="service.paginate($event.pageIndex + 1)">
 </mat-paginator>
 
 <ng-template #loading>
