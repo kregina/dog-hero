@@ -28,3 +28,21 @@
   text-decoration: none;
   color: $dg-pink-palette-3-hex;
 }
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: .7rem;
+
+  p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .btn {
+    padding: 0;
+    font-size: .7rem;
+    margin-top: -3px;
+  }
+}
