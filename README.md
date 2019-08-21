@@ -3,6 +3,11 @@
 This project was developed as a challenge for Dog Hero Frontend Developer opportunity.
 Note it was create for mobile view, so to have the better experience use Crhome Developer tools with mobile debugger on.
 
+## Demos
+| | |
+|:---: |:---:|
+|![Home](https://raw.githubusercontent.com/kregina/dog-hero/master/.github/home.gif)|![Storbook and Swagger](https://raw.githubusercontent.com/kregina/dog-hero/master/.github/storybook-swagger.gif)|
+
 # Sumary
 
 - [Features](#features)
