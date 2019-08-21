@@ -9,25 +9,29 @@ import { FilterEvent, SearchEvent } from './model';
 @Injectable()
 export class HomeService {
   search$ = combineLatest(
-    this.fromParams('address'),
-    this.fromParams('from'),
-    this.fromParams('to')
+    this.fromQueryParam('address'),
+    this.fromQueryParam('from'),
+    this.fromQueryParam('to')
   )
   filter$ = combineLatest(
-    this.fromParams('price')
+    this.fromQueryParam('price')
   )
-  page$ = this.fromParams('page');
+  page$ = this.fromQueryParam('page');
   count$ = new BehaviorSubject(0);
   pageSize = 10;
 
   private hosts$ = this.hostsService.getHosts().pipe(shareReplay(1));
 
   displayedHosts$ = this.search$.pipe(
+    //simulate server side search
     switchMap(search => this.hosts$.pipe(
       map(hosts => this.applySearch(hosts, search)))),
+    //client side filter
     switchMap(hosts => this.filter$.pipe(
       map(filter => this.applyFilter(hosts, filter)))),
+    //reset to first page when search changes
     tap(({ length }) => this.count$.next(length)),
+    //client side paginations
     switchMap(hosts => this.page$.pipe(
       map(page => this.applyPagination(hosts, page)),
     ))
@@ -37,7 +41,9 @@ export class HomeService {
     private hostsService: HostsService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    this.route.queryParamMap.subscribe(_ => console.log('PARAM MAP CHANGE'));
+  }
 
   public search(event: SearchEvent) {
     this.router.navigate(['./'], {
@@ -80,7 +86,6 @@ export class HomeService {
   }
 
   private applyFilter(hosts: Host[], [price]) {
-    debugger
     let result = hosts;
     if (price) {
       const [min, max] = price.split('-');
@@ -97,7 +102,6 @@ export class HomeService {
   }
 
   private applyPagination(hosts: Host[], page) {
-    debugger;
     page = +page || 1;
     const from = (page-1) * this.pageSize;
     const to = from + this.pageSize;
@@ -105,8 +109,8 @@ export class HomeService {
     return hosts.slice(from, to);
   }
 
-  private fromParams(key: string) {
-    return this.route.paramMap.pipe(
+  private fromQueryParam(key: string) {
+    return this.route.queryParamMap.pipe(
       map(p => p.get(key)),
       distinctUntilChanged()
     );
