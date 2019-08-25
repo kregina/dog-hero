@@ -20,7 +20,7 @@ export class HomeService {
   count$ = new BehaviorSubject(0);
   pageSize = 10;
 
-  private hosts$ = this.hostsService.getHosts().pipe(shareReplay(1));
+  private hosts$ = this.hostsService.getHosts();
 
   displayedHosts$ = this.search$.pipe(
     //simulate server side search
@@ -41,9 +41,7 @@ export class HomeService {
     private hostsService: HostsService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    this.route.queryParamMap.subscribe(_ => console.log('PARAM MAP CHANGE'));
-  }
+  ){}
 
   public search(event: SearchEvent) {
     this.router.navigate(['./'], {
