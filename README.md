@@ -1,7 +1,7 @@
 # Dog Hero: Search Result page MOBILE app
 
 This project was developed as a challenge for Dog Hero Frontend Developer opportunity.
-Note it was create for mobile view, so to have the better experience use Crhome Developer tools with mobile debugger on.
+Note it was created for mobile view, so for the better experience use Chrome Developer tools with mobile debugger on.
 
 ## Demos
 | | |
@@ -43,7 +43,7 @@ Note it was create for mobile view, so to have the better experience use Crhome 
 - [Sass](http://sass-lang.com/)
 - [Nx](https://nx.dev/angular/)
 - [Storybook](https://storybook.js.org/)
-- [Ruby in Rails](https://rubyonrails.org/)
+- [Ruby on Rails](https://rubyonrails.org/)
 - [Nswag](https://github.com/RicoSuter/NSwag)
 
 ### Prerequisites
